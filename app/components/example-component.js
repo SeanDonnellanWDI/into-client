@@ -5,6 +5,9 @@ export default Component.extend({
   actions: {
     deleteExample () {
       return this.sendAction('deleteExample', this.get('example'))
+    },
+    updateExample (example) {
+      return this.sendAction('updateExample', example)
     }
   }
 })
