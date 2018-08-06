@@ -1,3 +1,7 @@
-{{example.text}}
-<button class='btn-xs btn-danger' {{ action 'deleteExample' }}>Delete</button>
-{{example-component/form example=example updateExample='updateExample'}}
+{{#if editing}}
+  {{example-component/form example=example updateExample='updateExample' toggleEditing='toggleEditing'}}
+{{else}}
+  {{example.text}}
+  <button class="btn-xs btn-primary" {{ action 'toggleEditing' }}>Edit</button>
+  <button class='btn-xs btn-danger' {{ action 'deleteExample' }}>Delete</button>
+{{/if}}
