@@ -1,7 +1,9 @@
 {{#if editing}}
   {{example-component/form example=example updateExample='updateExample' toggleEditing='toggleEditing'}}
-{{else}}
+{{else if example.editable}}
   {{example.text}}
   <button class="btn-xs btn-primary" {{ action 'toggleEditing' }}>Edit</button>
   <button class='btn-xs btn-danger' {{ action 'deleteExample' }}>Delete</button>
+{{else}}
+  {{example.text}}
 {{/if}}
