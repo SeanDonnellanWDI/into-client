@@ -1,5 +1,5 @@
 <ul>
   {{#each model as |example|}}
-  <li>{{example.text}}</li>
+    {{example-component example=example deleteExample='deleteExample'}}
   {{/each}}
 </ul>
