@@ -48,7 +48,7 @@ module.exports = function (environment) {
   if (environment === 'production') {
     ENV.rootURL = '/into-client'
     ENV.locationType = 'hash'
-    ENV.apiHost = 'https://into-api.herokuapp.com/examples'
+    ENV.apiHost = 'https://into-api.herokuapp.com'
   }
 
   return ENV
