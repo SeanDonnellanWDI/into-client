@@ -1,0 +1,9 @@
+<p>These are the available API services which Into connects with. Simply save your username of each service to start gathering information</p>
+<h2>Accounts:</h2>
+<ul>
+  {{#each model as |account|}}
+  <li>
+    <p><b>{{account.service}}:</b> {{account.username}}</p>
+  </li>
+  {{/each}}
+</ul>
