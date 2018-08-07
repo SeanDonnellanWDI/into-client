@@ -1,0 +1,6 @@
+<ul>
+  {{example-component/form example=model.example updateExample='createExample' editForm=false}}
+  {{#each model.examples as |example|}}
+    {{example-component example=example deleteExample='deleteExample' updateExample='updateExample'}}
+  {{/each}}
+</ul>

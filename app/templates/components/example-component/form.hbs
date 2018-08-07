@@ -1,0 +1,7 @@
+<form {{action 'updateExample' on="submit"}}>
+  {{input placeholder="Example" value=example.text}}
+  <button type="submit">Save</button>
+  {{#if editForm}}
+    <button {{action 'cancel'}}>Cancel</button>
+  {{/if}}
+</form>
