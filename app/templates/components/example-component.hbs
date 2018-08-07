@@ -1,5 +1,5 @@
 {{#if editing}}
-  {{example-component/form example=example updateExample='updateExample' toggleEditing='toggleEditing'}}
+  {{example-component/form example=example updateExample='updateExample' toggleEditing='toggleEditing' editForm=true}}
 {{else if example.editable}}
   {{example.text}}
   <button class="btn-xs btn-primary" {{ action 'toggleEditing' }}>Edit</button>

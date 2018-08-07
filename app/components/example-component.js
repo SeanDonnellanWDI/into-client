@@ -8,6 +8,7 @@ export default Component.extend({
       return this.sendAction('deleteExample', this.get('example'))
     },
     updateExample (example) {
+      example.set('example', this.get('example'))
       this.toggleProperty('editing')
       return this.sendAction('updateExample', example)
     },
