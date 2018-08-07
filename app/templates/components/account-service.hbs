@@ -1,2 +1,5 @@
-<span><p><b>{{account.service}}:</b> {{account.username}}
-<button class='btn-xs btn-danger' {{action 'removeAccount'}}>Remove</button></p></span>
+{{#if editing}}
+  {{account-service/form account=account updateAccount='updateAccount' toggleEditing='toggleEditing'}}
+{{else}}
+  <p><b>{{account.service}}:</b> {{account.username}} <button class='btn-xs btn-primary' {{action 'toggleEditing'}}>Update</button><button class='btn-xs btn-danger' {{action 'removeAccount'}}>Remove</button></p>
+{{/if}}

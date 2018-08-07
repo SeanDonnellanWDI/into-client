@@ -1,0 +1,6 @@
+<form {{action 'updateAccount' on="submit"}}>
+  {{input placeholder="Service" value=account.service}}
+  {{input placeholder="Username" value=account.username}}
+  <button type="submit">Update</button>
+  <button {{action 'cancel'}}>Cancel</button>
+</form>

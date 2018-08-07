@@ -7,6 +7,9 @@ export default Route.extend({
   actions: {
     removeAccount (account) {
       account.destroyRecord()
+    },
+    updateAccount (account) {
+      account.save()
     }
   }
 })

@@ -1,7 +1,7 @@
-<p>These are the available API services which Into connects with. Simply save your username of each service to start gathering information</p>
+<p>These are the available API services which INTO connects with. Simply save your username of each service to start gathering information</p>
 <h2>Accounts:</h2>
 <ul>
   {{#each model as |account|}}
-    {{account-service account=account removeAccount='removeAccount'}}
+    {{account-service account=account removeAccount='removeAccount' updateAccount='updateAccount'}}
   {{/each}}
 </ul>
