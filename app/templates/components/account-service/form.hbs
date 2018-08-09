@@ -1,5 +1,7 @@
 <form {{action 'updateAccount' on="submit"}}>
+  <label for="services">Service</label>
   {{input placeholder="Service" value=account.service}}
+  <label for="usernames">Username</label>
   {{input placeholder="Username" value=account.username}}
   <button type="submit">Update</button>
   {{#if editForm}}
