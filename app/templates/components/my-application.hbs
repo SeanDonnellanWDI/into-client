@@ -18,13 +18,12 @@
   {{/navbar.content}}
 {{/bs-navbar}}
 
-<h1>What are you INTO?</h1>
-<p>INTO pulls data from all your favorite media streaming services like Spotify, Netflix, Steam, and Audible and examines what you've been into recently. As a user of INTO, you can generate a 3x3 image of you everything you've been into over the past 7 days.</p>
-
 {{#each flashMessages.queue as |flash|}}
   {{flash-message flash=flash}}
 {{/each}}
 
 <div class="col-md-8 col-md-offset-2">
+  <h1>What are you INTO?</h1>
+  <p>INTO pulls data from all your favorite media streaming services like Spotify, Netflix, Steam, and Audible and examines what you've been into recently. As a user of INTO, you can generate a 3x3 image of you everything you've been into over the past 7 days.</p>
   {{outlet}}
 </div>
