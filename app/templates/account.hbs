@@ -1,9 +1,9 @@
-<p>These are the available API services which INTO connects with. Simply save your username of each service to start gathering information</p>
 <h2>Enter a new Account</h2>
-{{account-service/form account=model.account updateAccount='createAccount' editForm=false}}
+{{account-service/form account=model updateAccount='createAccount' editForm=false}}
+<hr>
 <h2>Accounts:</h2>
 <ul>
-  {{#each model.accounts as |account|}}
+  {{#each model as |account|}}
     {{account-service account=account removeAccount='removeAccount' updateAccount='updateAccount'}}
   {{/each}}
 </ul>

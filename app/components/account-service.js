@@ -8,7 +8,6 @@ export default Component.extend({
       return this.sendAction('removeAccount', this.get('account'))
     },
     updateAccount (account) {
-      account.set('account', this.get('account'))
       this.toggleProperty('editing')
       return this.sendAction('updateAccount', account)
     },

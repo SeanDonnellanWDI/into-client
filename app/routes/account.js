@@ -1,18 +1,14 @@
 import Route from '@ember/routing/route'
 import { inject as service } from '@ember/service'
-import RSVP from 'rsvp'
 
 export default Route.extend({
   flashMessages: service(),
   model () {
-    return RSVP.hash({
-      accounts: this.get('store').findAll('account'),
-      account: this.get('store').createRecord('account', {})
-    })
+    return this.get('store').findAll('account')
   },
   actions: {
     createAccount (account) {
-      account.save()
+      this.get('store').createRecord('account', account).save()
       .then(() => this.refresh())
       .then(() => this.get('flashMessages').success('You added a new account'))
       .catch(() => {
@@ -30,6 +26,7 @@ export default Route.extend({
     },
     updateAccount (account) {
       account.save()
+      .then(() => this.transitionTo('account'))
       .then(() => this.get('flashMessages').success('You updated your account'))
       .catch(() => {
         this.get('flashMessages')
