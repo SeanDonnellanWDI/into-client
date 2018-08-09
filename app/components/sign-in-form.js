@@ -7,6 +7,7 @@ export default Component.extend({
   actions: {
     submit () {
       this.sendAction('submit', this.get('credentials'))
+      this.set('credentials', {})
     },
 
     reset () {
