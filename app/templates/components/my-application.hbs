@@ -6,7 +6,7 @@
   {{#navbar.content}}
     {{#navbar.nav class='navbar-right' as |nav|}}
       {{#if isAuthenticated}}
-        {{#nav.item}}{{#nav.link-to "example"}}Example{{/nav.link-to}}{{/nav.item}}
+        {{!-- {{#nav.item}}{{#nav.link-to "example"}}Example{{/nav.link-to}}{{/nav.item}} --}}
         {{#nav.item}}{{#nav.link-to "account"}}Accounts{{/nav.link-to}}{{/nav.item}}
         {{#nav.item}}{{#nav.link-to "change-password"}}Change Password{{/nav.link-to}}{{/nav.item}}
         {{#nav.item}}<a href="#" {{action "signOut"}}>Sign Out</a>{{/nav.item}}
