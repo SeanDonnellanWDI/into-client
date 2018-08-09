@@ -1,8 +1,16 @@
 <form {{action 'updateAccount' on="submit"}}>
-  {{input placeholder="Service" value=account.service}}
-  {{input placeholder="Username" value=account.username}}
-  <button type="submit">Update</button>
   {{#if editForm}}
-    <button {{action 'cancel'}}>Cancel</button>
+    <label for="services">Service</label>
+    {{input placeholder="Service" value=account.service required=true}}
+    <label for="usernames">Username</label>
+    {{input placeholder="Username" value=account.username required=true}}
+    <button class='btn-xs btn-primary' type="submit">Update</button>
+    <button class='btn-xs btn-primary' {{action 'cancel'}}>Cancel</button>
+  {{else}}
+    <label for="services">Service</label>
+    {{input placeholder="Service" value=newAccount.service required=true}}
+    <label for="usernames">Username</label>
+    {{input placeholder="Username" value=newAccount.username required=true}}
+    <button class='btn-xs btn-primary' type="submit">Add</button>
   {{/if}}
 </form>
