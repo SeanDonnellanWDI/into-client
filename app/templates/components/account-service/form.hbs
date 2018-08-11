@@ -5,7 +5,7 @@
     <label for="usernames">Username</label>
     {{input placeholder="Username" value=account.username required=true}}
     <button class='btn-xs btn-primary' type="submit">Update</button>
-    <button class='btn-xs btn-primary' {{action 'cancel'}}>Cancel</button>
+    <button class='btn-xs btn-danger' {{action 'cancel'}}>Cancel</button>
   {{else}}
     <label for="services">Service</label>
     {{input placeholder="Service" value=newAccount.service required=true}}

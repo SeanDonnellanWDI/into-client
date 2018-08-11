@@ -13,6 +13,9 @@ export default Component.extend({
       this.set('newAccount.service', '')
     },
     cancel: function () {
+      this.get('account').rollbackAttributes()
+      this.set('newAccount.username', '')
+      this.set('newAccount.service', '')
       return this.sendAction('toggleEditing')
     }
   }
