@@ -12,6 +12,7 @@ Router.map(function () {
   this.route('change-password')
   this.route('example')
   this.route('account')
+  this.route('album')
 })
 
 export default Router

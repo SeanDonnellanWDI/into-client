@@ -1,6 +1,11 @@
 <p>These are the available API services which INTO connects with. Simply save your username of each service to start gathering information</p>
 <h2>Enter a new Account</h2>
-{{account-service/form account=model.account updateAccount='createAccount' editForm=false}}
+{{account-service/form account=model.account updateAccount='createAccount' spotifyAuth='spotifyAuth' editForm=false}}
+<hr>
+<a  href="https://accounts.spotify.com/authorize/?client_id=c4b89345becb45f7b9289414554c088c&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A7165%2Faccount&scope=user-read-email&state=abcdefghijklmnopqrstuvwxyz0123456789">Login to Spotify with hardcoded link</a>
+<br>
+<button class='btn btn-primary' {{action 'spotifyAuth'}}>Login to Spotify</button>
+<hr>
 <h2>Accounts:</h2>
 <ul>
   {{#each model.accounts as |account|}}
