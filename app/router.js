@@ -11,6 +11,7 @@ Router.map(function () {
   this.route('sign-in')
   this.route('change-password')
   this.route('account')
+  this.route('album')
 })
 
 export default Router
