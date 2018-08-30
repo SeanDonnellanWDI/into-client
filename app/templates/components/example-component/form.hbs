@@ -1,4 +1,5 @@
 <form {{action 'updateExample' on="submit"}}>
+  <label for="example">Example</label>
   {{input placeholder="Example" value=example.text}}
   <button type="submit">Save</button>
   {{#if editForm}}
