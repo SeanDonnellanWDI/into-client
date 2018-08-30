@@ -2,7 +2,7 @@
 <h2>Enter a new Account</h2>
 {{account-service/form account=model.account updateAccount='createAccount' editForm=false}}
 <hr>
-  <a class='btn btn-primary' id='spotify-auth-hard-link' href="https://accounts.spotify.com/authorize/?client_id=c4b89345becb45f7b9289414554c088c&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A4741%2Fcallback&scope=user-read-email&state=1">Login to Spotify with hardcoded link</a>
+  <a class='btn btn-primary' id='spotify-auth-hard-link' href="https://accounts.spotify.com/authorize/?client_id=c4b89345becb45f7b9289414554c088c&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A4741%2Fcallback&scope=user-read-email&state={{model.userId}}">Login to Spotify with hardcoded link</a>
 <hr>
 <h2>Accounts:</h2>
 <ul>
