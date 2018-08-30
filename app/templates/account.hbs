@@ -5,7 +5,7 @@
 <hr>
 <h2>Accounts:</h2>
 <ul>
-  {{#each model as |account|}}
+  {{#each model.accounts as |account|}}
     {{account-service account=account removeAccount='removeAccount' updateAccount='updateAccount'}}
   {{/each}}
 </ul>
