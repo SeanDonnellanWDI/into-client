@@ -2,6 +2,7 @@
 {{account-service/form account=model.account updateAccount='createAccount' editForm=false}}
 <hr>
   <a class='btn btn-primary' id='spotify-auth-hard-link' href="https://accounts.spotify.com/authorize/?client_id=c4b89345becb45f7b9289414554c088c&response_type=code&redirect_uri=https%3A%2F%2Finto-api.herokuapp.com%2Fcallback&scope=user-read-email&state={{model.userId}}">Login to Spotify with hardcoded link</a>
+  <p>(Currently not persisting to the DB which is why the view is not displaying Spotify: your@email.com below. It works on localhost I promise.)</p>
 <hr>
 <h2>Accounts:</h2>
 <ul>
