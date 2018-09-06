@@ -1,28 +1,58 @@
 {{#bs-navbar type=(if inverse 'inverse') fluid=fluid collapsed=collapsed onCollapse=(action (mut collapsed) true) onExpand=(action (mut collapsed) false) as |navbar|}}
-  <div class="navbar-header">
-    {{navbar.toggle}}
-    {{#link-to "application" class="navbar-brand"}}INTO{{/link-to}}
-  </div>
-  {{#navbar.content}}
-    {{#navbar.nav class='navbar-right' as |nav|}}
-      {{#if isAuthenticated}}
-        {{#nav.item}}{{#nav.link-to "account"}}Accounts{{/nav.link-to}}{{/nav.item}}
-        {{#nav.item}}{{#nav.link-to "change-password"}}Change Password{{/nav.link-to}}{{/nav.item}}
-        {{#nav.item}}<a href="#" {{action "signOut"}}>Sign Out</a>{{/nav.item}}
-      {{else}}
-        {{#nav.item}}{{#nav.link-to "sign-up"}}Sign Up{{/nav.link-to}}{{/nav.item}}
-        {{#nav.item}}{{#nav.link-to "sign-in"}}Sign In{{/nav.link-to}}{{/nav.item}}
-      {{/if}}
-    {{/navbar.nav}}
-  {{/navbar.content}}
+<div class="navbar-header">
+  {{navbar.toggle}}
+  {{#link-to "application" class="navbar-brand"}}INTO{{/link-to}}
+</div>
+{{#navbar.content}}
+  {{#navbar.nav class='navbar-right' as |nav|}}
+    {{#if isAuthenticated}}
+      {{#nav.item}}{{#nav.link-to "account"}}Accounts{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to "change-password"}}Change Password{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}<a href="#" {{action "signOut"}}>Sign Out</a>{{/nav.item}}
+    {{else}}
+      {{#nav.item}}{{#nav.link-to "sign-up"}}Sign Up{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to "sign-in"}}Sign In{{/nav.link-to}}{{/nav.item}}
+    {{/if}}
+  {{/navbar.nav}}
+{{/navbar.content}}
 {{/bs-navbar}}
 
-{{#each flashMessages.queue as |flash|}}
-  {{flash-message flash=flash}}
-{{/each}}
-
-<div class="col-md-8 col-md-offset-2">
-  <h1>What are you INTO?</h1>
-  <p>INTO pulls data from all your favorite media streaming services like Spotify, Netflix, Steam, and Audible and examines what you've been into recently. As a user of INTO, you can generate a 3x3 image of you everything you've been into over the past 7 days.</p>
-  {{outlet}}
+<div class="container-fluid">
+  {{#each flashMessages.queue as |flash|}}
+    {{flash-message flash=flash}}
+  {{/each}}
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Into</h1>
+      <p>Into is currently under construction at this time - not all features are functional yet.</p>
+      <hr>
+      <button class="btn btn-success" type="button" name="generate-a-collage">Generate Collage</button>
+      <hr>
+      {{outlet}}
+      <hr>
+    </div>
+    <div class="col-xs-12 description">
+      <h1>Q&A</h1>
+      <h3>What is Into</h3>
+      <p>Into pulls data from all your favorite media streaming services like Spotify, Netflix, Steam, and Audible and examines what you've been streaming the most over the past 7 days. As a user of INTO, you can generate a 3x3 image of album covers, posters, covers, and any other visual representation of everything you've been doing over the past 7 days.</p>
+      <br>
+      <h3>Why should I use into?</h3>
+      <p>Into was originally created as a way to share your most recent interest online in an easy to understand visual format. After a user generates a collage, that user can download the generated image or share the image through Instagram, Twitter, Tinder, and more. The collage provides everyone else a quick glimpse of what you've been doing recently which could become great conversation starters or fun ways to compare interests.</p>
+      <br>
+      <h3>How does Into work?</h3>
+      <p>Currently, a users can sign up then sign in using real or fake credentials, or users can use these provided example credentials to Login:</p>
+      <p><code>u: into@example.com</code>
+      <br>
+      <code>p: into</code></p>
+      <p>When a user successfully signs in, that user can change their password (please do not edit the example account password) or sign out. A signed-in user will also see the "Accounts" page in the navigation bar. When a user visits the Accounts page, that user can pick and choose which streaming services they wish to connect, such as Spotify. Into will save that account information so when you press the "generate a collage" button, Into will look at the authenticated streaming services in your account and pull data from those services, such as most recently played music and album cover art.</p>
+      <br>
+      <h3>What's next for Into?</h3>
+      <p>Unfortunately, Into is missing several of its key features to function properly, such as the collage generation script, 3rd party API services connections (Netflix, Audible, AMazon Music, etc), and setting up an AWS s3 storage service for the vast number of images being created and stored on this app.</p>
+      <p>Into currently allows user authentication and a faux model of user input via manually entered credentials. This faux input will be depricated as services are added. Most recently, Into has been connected to Spotify.</p>
+      <br>
+      <hr>
+    </div>
+  </div>
 </div>
