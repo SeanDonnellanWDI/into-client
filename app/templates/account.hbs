@@ -1,11 +1,21 @@
-<h2>Enter a new Account</h2>
-{{account-service/form account=model.account updateAccount='createAccount' editForm=false}}
-<hr>
-  <a class='btn btn-success' id='spotify-auth-hard-link' href="https://accounts.spotify.com/authorize/?client_id=c4b89345becb45f7b9289414554c088c&response_type=code&redirect_uri=https%3A%2F%2Finto-api.herokuapp.com%2Fcallback&scope=user-read-email&state={{model.userId}}">Login to Spotify</a>
-<hr>
-<h2>Accounts:</h2>
-<ul>
-  {{#each model.accounts as |account|}}
-    {{account-service account=account removeAccount='removeAccount' updateAccount='updateAccount'}}
-  {{/each}}
-</ul>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-primary" type="button" name="generate-a-collage">Generate Collage</button>
+    <hr>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <h2>Enter a new Account</h2>
+    {{account-service/form account=model.account updateAccount='createAccount' editForm=false}}
+    <hr>
+    <a class='btn btn-success' id='spotify-auth-hard-link' href="https://accounts.spotify.com/authorize/?client_id=c4b89345becb45f7b9289414554c088c&response_type=code&redirect_uri=https%3A%2F%2Finto-api.herokuapp.com%2Fcallback&scope=user-read-email&state={{model.userId}}">Login to Spotify</a>
+    <hr>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <h2>Accounts:</h2>
+    <ul>
+      {{#each model.accounts as |account|}}
+        {{account-service account=account removeAccount='removeAccount' updateAccount='updateAccount'}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
